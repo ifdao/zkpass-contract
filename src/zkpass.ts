@@ -27,7 +27,6 @@ export class ZkPassApp extends SmartContract {
 function createLocalBlockchain(): PrivateKey {
   let Local = Mina.LocalBlockchain();
   Mina.setActiveInstance(Local);
-
   const account = Local.testAccounts[0].privateKey;
   return account;
 }

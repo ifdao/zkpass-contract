@@ -62,4 +62,3 @@
 
 ## Implementation On Mina
   zkApp uses Typescript to implement zero-knowledge proof, which is more friendly to developers; Mina's zero-knowledge is based on PLONK algorithm with constant proof size, which is suitable for authentication application scenarios. Since the verification message digest uses the CBC-HMAC algorithm, here we need to implement our own CBC-HMAC algorithm circuit. p inherit Circuit to create the circuit, private input (Q', R', mac_key, b), public input (enc_key, token, Q, R), and also create the verificationKey to send to the contract. v Inherit SmartContract to create verification contract, receive verificationKey from P and proof verify if it passes.
- 

@@ -22,7 +22,8 @@ const sk = PrivateKey.random();
 const zkAppAddress = sk.toPublicKey();
 const app = new ZkPassApp(zkAppAddress);
 
-console.log('Deploying zkpass...');
+
+console.log('Deploying zkPass...');
 await deploy(app, sk, account);
 
 // cleanup
