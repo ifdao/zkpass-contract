@@ -34,7 +34,7 @@
       * enc_key,mac_key := $PRF(m,"key partation",r_s || r_c)$
       * samples $F_p \mapsto r_k,r_m$ , send (enc_key,$k_p$,$r_m$) to P and send ($r_k$ $\oplus$ mac_key,$r_m$ $\oplus$ m) to V.
   * Data query.
-    * P assembles Q by filling the password (token) into uri, P computes the digest t by MPC-HMAC together with V, and then P sends (tid, Q'= Enc($enc\_key,Q||t$ )) to S.
+    * P assembles Q by filling the password (token) into uri, P computes the digest t by MPC-HMAC together with V, and then P sends (tid, Q'= Enc(enc_key,Q||t)) to S.
   
   * Zero-knowledge proof.
     * P received a reply R' from the server
