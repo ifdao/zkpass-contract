@@ -2,7 +2,14 @@
 
 ## Overview
   zkPass is a decentralized KYC solution based on MPC (Multi-Party Computation) and ZKP, which aims to overcome various flaws in the current KYC system, eliminate the pain points related to identity verification, and protect user privacy while expanding KYC capabilities.
+
+## Related Technologies  
+  * TLS: Secure Transport Layer Protocol, a protocol used to provide confidentiality and data integrity between two communicating applications. tls is the cornerstone of communication in the web world.
   
+  * MPC: Secure Multiparty Computation, which allows multiple participants to jointly participate in the computation without revealing their privacy, here mainly uses obfuscated circuits and optimized fast multiparty computation ECDSA algorithms.
+  
+  * ZKP: Zero Knowledge Proof, which refers to the ability of a prover to convince a verifier that an assertion is correct without providing any useful information to the verifier, and the specific implementation will use the PLONK algorithm.
+
 ## Definitions
   * P stands for prover
   * V is for verifier
@@ -13,13 +20,6 @@
   * mac_key represents the MAC key in TLS 
   * t stands for summary (Digest)
 
-## Related Technologies  
-  * TLS: Secure Transport Layer Protocol, a protocol used to provide confidentiality and data integrity between two communicating applications. tls is the cornerstone of communication in the web world.
-  
-  * MPC: Secure Multiparty Computation, which allows multiple participants to jointly participate in the computation without revealing their privacy, here mainly uses obfuscated circuits and optimized fast multiparty computation ECDSA algorithms.
-  
-  * ZKP: Zero Knowledge Proof, which refers to the ability of a prover to convince a verifier that an assertion is correct without providing any useful information to the verifier, and the specific implementation will use the PLONK algorithm.
-    
 ## Three Stages:
   * Multi-party handshake.
     * P gets (tid, uri, assert) from V. uri is the api of the query and assert is the result assertion.
@@ -60,6 +60,6 @@
     * V verification proof.
       With ZKP, the user's privacy is guaranteed while providing proof for third parties; with MPC, the prover and verifier jointly hold the mac_key, ensuring that the prover cannot cheat; and all of this is built on the standard TLS protocol, without any changes to the server.
 
-## Implementation
+## Implementation On Mina
   zkApp uses Typescript to implement zero-knowledge proof, which is more friendly to developers; Mina's zero-knowledge is based on PLONK algorithm with constant proof size, which is suitable for authentication application scenarios. Since the verification message digest uses the CBC-HMAC algorithm, here we need to implement our own CBC-HMAC algorithm circuit. p inherit Circuit to create the circuit, private input (Q', R', mac_key, b), public input (enc_key, token, Q, R), and also create the verificationKey to send to the contract. v Inherit SmartContract to create verification contract, receive verificationKey from P and proof verify if it passes.
  
