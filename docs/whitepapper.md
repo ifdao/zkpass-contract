@@ -42,7 +42,6 @@
     * V sends $(tid,mac\_key\_v)$ to P.
     * P calculate $mac\_key = mac\_key\_p+mac\_key\_v$ , P decrypts R||t = Dec($enc\_key,R'$), and verifies t.
     * Generate proof
-      
       ```plain
       P set
         b= assert(R)
