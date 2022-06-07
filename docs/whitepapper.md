@@ -31,17 +31,16 @@
       * Private input: $z_p \in F_p from P;z_v \in F_p \ from \ V$
       * $z :=z_p+z_v$
       * $m :=PRF(z,"master secret",r_s || r_c)$
-      * $enc\_key,mac\_key := PRF(m,"key partation",r_s || r_c)$
-      * samples $F_p \mapsto r_k,r_m$ , send $(enc\_key,k_p,r_m)$ to P and send $(r_k \oplus mac\_key,r_m \oplus m)$ to V.
-      * $mac\_key$
+      * enc_key,mac_key := $PRF(m,"key partation",r_s || r_c)$
+      * samples $F_p \mapsto r_k,r_m$ , send (enc_key,$k_p$,$r_m$) to P and send ($r_k$ $\oplus$ mac_key,$r_m$ $\oplus$ m) to V.
   * Data query.
     * P assembles Q by filling the password (token) into uri, P computes the digest t by MPC-HMAC together with V, and then P sends (tid, Q'= Enc($enc\_key,Q||t$ )) to S.
   
   * Zero-knowledge proof.
     * P received a reply R' from the server
-    * P sends $(tid,Q',R',mac\_key)$ to V.
-    * V sends $(tid,mac\_key\_v)$ to P.
-    * P calculate $mac\_key = mac\_key\_p+mac\_key\_v$ , P decrypts R||t = Dec($enc\_key,R'$), and verifies t.
+    * P sends (tid,Q',R',mac_key) to V.
+    * V sends (tid,mac_key$\_v$) to P.
+    * P calculate mac_key = mac_key$\_p$+mac_key$\_v$ , P decrypts R||t = Dec(enc_key,R'), and verifies t.
     * Generate proof
       ```plain
       P set
