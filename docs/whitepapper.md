@@ -30,8 +30,8 @@
       * Public Input: $nounce,r_c,r_s$
       * Private input: $z_p \in F_p from P;z_v \in F_p \ from \ V$
       * $z :=z_p+z_v$
-      * $m :=PRF(z,"master secret",r_s || r_c)$
-      * enc_key,mac_key := $PRF(m,"key partation",r_s || r_c)$
+      * m :=PRF(z,"master secret",$r_s$ || $r_c$)
+      * enc_key,mac_key := PRF(m,"key partation",$r_s$ || $r_c$)
       * samples $F_p \mapsto r_k,r_m$ , send (enc_key,$k_p$,$r_m$) to P and send ($r_k$ $\oplus$ mac_key,$r_m$ $\oplus$ m) to V.
   * Data query.
     * P assembles Q by filling the password (token) into uri, P computes the digest t by MPC-HMAC together with V, and then P sends (tid, Q'= Enc(enc_key,Q||t)) to S.
