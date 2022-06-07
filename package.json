@@ -1,13 +1,12 @@
 {
   "name": "zkpass-contract",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "zkpass",
   "author": "",
   "license": "MIT",
   "keywords": [
     "mina-zkapp",
     "zkapp",
-    "mina",
     "zkpass"
   ],
   "type": "module",
