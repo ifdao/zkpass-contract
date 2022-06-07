@@ -12,13 +12,13 @@
 
 ## Definitions
   * P stands for prover
-  * V is for verifier
-  * S for TLS server
-  * Q for P-initiated queries
-  * R is for S Reply data
+  * V stands for verifier
+  * S stands for TLS server
+  * Q stands for P-initiated queries
+  * R stands for S Reply data
   * enc_key represents the key of the encrypted data in TLS
   * mac_key represents the MAC key in TLS 
-  * t stands for summary (Digest)
+  * t stands for Digest
 
 ## Three Stages:
   * Multi-party handshake.
