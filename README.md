@@ -1,7 +1,7 @@
 # zkPass Protocol
 
 ## Overview
-  zkPass is a decentralized KYC solution based on MPC (Multi-Party Computation) and ZKP(Zero-Knowledge Proof), which aims to overcome various flaws in the current KYC system, eliminate the pain points related to identity verification, and protect user privacy while expanding KYC capabilities.
+  zkPass is a decentralized KYC solution based on MPC(Multi-Party Computation) and ZKP(Zero-Knowledge Proof), which aims to overcome various flaws in the current KYC system, eliminate the pain points related to identity verification, and protect user privacy while expanding KYC capabilities.
 
 ## Related Technologies  
   * TLS: Secure Transport Layer Protocol, a protocol used to provide confidentiality and data integrity between two communicating applications. tls is the cornerstone of communication in the web world.
@@ -16,8 +16,8 @@
   * S stands for TLS server
   * Q stands for P-initiated queries
   * R stands for S Reply data
-  * enc_key represents the key of the encrypted data in TLS
-  * mac_key represents the MAC key in TLS 
+  * enc_key stands for the key of the encrypted data in TLS
+  * mac_key stands for the MAC key in TLS 
   * t stands for Digest
 
 ## Three Stages:
@@ -61,4 +61,4 @@
       With ZKP, the user's privacy is guaranteed while providing proof for third parties; with MPC, the prover and verifier jointly hold the mac_key, ensuring that the prover cannot cheat; and all of this is built on the standard TLS protocol, without any changes to the server.
 
 ## Implementation On Mina
-  zkApp uses Typescript to implement zero-knowledge proof, which is more friendly to developers; Mina's zero-knowledge is based on PLONK algorithm with constant proof size, which is suitable for authentication application scenarios. Since the verification message digest uses the CBC-HMAC algorithm, here we need to implement our own CBC-HMAC algorithm circuit. p inherit Circuit to create the circuit, private input (Q', R', mac_key, b), public input (enc_key, token, Q, R), and also create the verificationKey to send to the contract. v Inherit SmartContract to create verification contract, receive verificationKey from P and proof verify if it passes.
+  zkApp uses typescript to implement zero-knowledge proof, which is more friendly to developers; Mina's zero-knowledge is based on PLONK algorithm with constant proof size, which is suitable for authentication application scenarios. Since the verification message digest uses the CBC-HMAC algorithm, here we need to implement our own CBC-HMAC algorithm circuit. p inherit Circuit to create the circuit, private input (Q', R', mac_key, b), public input (enc_key, token, Q, R), and also create the verificationKey to send to the contract. v Inherit SmartContract to create verification contract, receive verificationKey from P and proof verify if it passes.
