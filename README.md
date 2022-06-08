@@ -1,7 +1,7 @@
 # zkPass Protocol
 
 ## Overview
-  zkPass is a decentralized KYC solution based on MPC (Multi-Party Computation) and ZKP, which aims to overcome various flaws in the current KYC system, eliminate the pain points related to identity verification, and protect user privacy while expanding KYC capabilities.
+  zkPass is a decentralized KYC solution based on MPC (Multi-Party Computation) and ZKP(Zero-Knowledge Proof), which aims to overcome various flaws in the current KYC system, eliminate the pain points related to identity verification, and protect user privacy while expanding KYC capabilities.
 
 ## Related Technologies  
   * TLS: Secure Transport Layer Protocol, a protocol used to provide confidentiality and data integrity between two communicating applications. tls is the cornerstone of communication in the web world.
